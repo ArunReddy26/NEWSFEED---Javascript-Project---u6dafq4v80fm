@@ -69,9 +69,41 @@ button {
     flex-direction: column;
     gap:1rem;
 }
+.leftright{
+    display: flex;
+    justify-content: space-between;
 
+}
+.cards .leftright .name{
+    color: black;
+    font-weight: bold;
+}
+    
+.cards .leftright p{
+    font-size: 1.2rem;
+}
+.category{
+    text-transform: uppercase;
+    color:black;
+    font-weight: bold;
+}
+.cards p{
+   color:#2d2e2d;
+   font-size: 1.05rem;
+   letter-spacing: 0.5px;
+   margin-top: 1rem;
+}
+
+.cards h3{
+    margin-top: 5px;
+}
+.cards a{
+    text-decoration: none ;
+    text-transform:uppercase;
+    font-weight: bold;
+}
 .cards {
-    padding: 25px 10px;
+    padding: 25px 20px;
     border-radius: 10px;
     background-color: #d5d5d5;
 }
@@ -84,6 +116,24 @@ button {
 .heart1 {
     cursor: pointer;
     margin-left: 50rem;
+}
+#loadsavednews {
+    background: #00abf0;
+    border-radius: 40px;
+    font-size: 17px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 8px;
+
+    transition: .5s;
+    letter-spacing: 0.5px;
+
+
+}
+.loadnews{
+    margin-top: 3rem;
+    text-align: center;
 }
 
 

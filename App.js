@@ -23,23 +23,32 @@ async function NewsApi() {
 }
 NewsApi();
 
+// categories.addEventListener("click", (e) => {
+//     card.innerHTML = "";
+//     if (e.target.id != "categories") {
+//         newsarray= newsarray.filter((value) => {
+//             // console.log(value.category);
+//             // console.log(e.target.id);
+
+//             return value.category === e.target.id
+//         })
+//     }
+
+
+//     displaynewscard(newsarray);
+// })
+
 categories.addEventListener("click", (e) => {
     card.innerHTML = "";
+    let filteredArray;
     if (e.target.id != "categories") {
-
-        newsarray.filter((value) => {
-            // console.log(value.category);
-            // console.log(e.target.id);
-
-            return value.category === e.target.id
-
-
+        filteredArray = newsarray.filter((value) => {
+            return value.category === e.target.id;
         })
-        console.log(newsarray);
+        // console.log(newsarray);
     }
-
-   
-    displaynewscard(newsarray);
+    displaynewscard(filteredArray);
+    filteredArray = newsarray;
 })
 
 
@@ -48,14 +57,15 @@ function displaynewscard(newsarray) {
     newsarray.map(({ category, author, content, url }) => {
 
         card.innerHTML += `<div class="cards">
-        <h2>BY <span class="author">${author}</span></h2>
-        <h3 class="category">${category}</h3>
-        <p class="content">${content}</p>
-        <span> <a href=${url}}>ReadMore</a></span>
-        
+        <div class=leftright>
+        <p>BY <span class="name">${author}</span></p> 
+        <p>CATEGORY  <span class="category">${category}</span></p>
+        </div>
+        <p class="content">${content} <span> <a href=${url}}>read more.</a></span></p>
         <div class="heart1">
         <span><i class="fa fa-heart-o heart"></i></span>
-        </div>      
+        </div>   
+           
         </div>`
     })
 }
@@ -91,7 +101,7 @@ card.addEventListener('click', (e) => {
     else if (e.target.classList.contains('fa') & e.target.classList.contains('fa-heart')) {
         e.target.classList.remove('fa-heart');
         e.target.classList.add('fa-heart-o');
-        removeFromLS(e.target.parentElement.parentElement.parentElement.querySelector('.author').textContent);
+        removeFromLS(e.target.parentElement.parentElement.parentElement.querySelector('.name').textContent);
     }
 })
 
@@ -102,21 +112,22 @@ card.addEventListener('click', (e) => {
 function addToLocalStorage(newscards) {
 
     let newsobject = {
-        author: newscards.querySelector('.author').textContent,
+        name: newscards.querySelector('.name').textContent,
         category: newscards.querySelector('.category').textContent,
         content: newscards.querySelector('.content').textContent,
         // release_year: movieCard.querySelector('.releaseyear').textContent
     };
+    
     let favoritenews = getFavoriteMoviesFromLS();
     favoritenews.push(newsobject);
     localStorage.setItem('news', JSON.stringify(favoritenews));
 }
 
-function removeFromLS(author) {
-    console.log(author);
+function removeFromLS(name) {
+    console.log(name);
     let favoritenews = getFavoriteMoviesFromLS();
     favoritenews.forEach((element, index) => {
-        if (element.author === author) {
+        if (element.name === name) {
             favoritenews.splice(index, 1);
         }
     });
