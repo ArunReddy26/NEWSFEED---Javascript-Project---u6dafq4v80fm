@@ -23,6 +23,8 @@ async function NewsApi() {
 }
 NewsApi();
 
+
+
 // categories.addEventListener("click", (e) => {
 //     card.innerHTML = "";
 //     if (e.target.id != "categories") {
@@ -75,6 +77,7 @@ function displaynewscard(newsarray) {
 
 
 
+
 function getFavoriteMoviesFromLS() {
     let favoritenews;
 
@@ -117,7 +120,7 @@ function addToLocalStorage(newscards) {
         content: newscards.querySelector('.content').textContent,
         // release_year: movieCard.querySelector('.releaseyear').textContent
     };
-    
+
     let favoritenews = getFavoriteMoviesFromLS();
     favoritenews.push(newsobject);
     localStorage.setItem('news', JSON.stringify(favoritenews));

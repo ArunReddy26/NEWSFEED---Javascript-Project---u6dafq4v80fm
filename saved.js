@@ -45,19 +45,14 @@ card.addEventListener('click', (e) => {
         e.target.classList.remove('fa-heart');
         e.target.classList.add('fa-heart-o');
         // removeFromLS(e.target.parentElement.parentElement.parentElement.querySelector('.name').textContent);
-        console.log(e.target.parentElement.parentElement.parentElement.parentElement.querySelector('.name').textContent);
+        console.log(e.target.parentElement.parentElement.parentElement.querySelector('.name').textContent);
 
 
     }
 })
 
-
-
-
-
-
-function removeFromLS(author) {
-    console.log(author);
+function removeFromLS(name) {
+    console.log(name);
     let favoritenews = getFavoriteMoviesFromLS();
     favoritenews.forEach((element, index) => {
         if (element.name == name) {
