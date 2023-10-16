@@ -32,7 +32,6 @@ nav {
 
 
 .anchor {
-    position: absolute;
     padding: 4rem;
     display: flex;
     justify-content: space-between;
@@ -112,8 +111,9 @@ nav {
     }
     
 .footer-content{
+    position: fixed;
     margin-top: 5rem;
-    position: relative;
+    
     
 }
 .getnews {
