@@ -32,7 +32,7 @@ nav {
 
 
 .anchor {
-    position: fixed;
+    position: absolute;
     padding: 4rem;
     display: flex;
     justify-content: space-between;
