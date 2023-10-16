@@ -22,12 +22,12 @@ function getFavoriteMoviesFromLS() {
 
 function displaynewscard(newsarray) {
     card.innerHTML = "";
-    newsarray.map(({ category, author, content, url }) => {
+    newsarray.map(({ category, name, content, url }) => {
 
         card.innerHTML += `
         <div class="cards">
         <div class=leftright>
-        <p>BY <span class="name">${author}</span></p> 
+        <p>BY <span class="name">${name}</span></p> 
         <p>CATEGORY  <span class="category">${category}</span></p>
         </div>
         <p class="content">${content} <span> <a href=${url}}>read more.</a></span></p>
@@ -44,7 +44,7 @@ card.addEventListener('click', (e) => {
     if (e.target.classList.contains('fa') & e.target.classList.contains('fa-heart')) {
         e.target.classList.remove('fa-heart');
         e.target.classList.add('fa-heart-o');
-        // removeFromLS(e.target.parentElement.parentElement.parentElement.querySelector('.name').textContent);
+        removeFromLS(e.target.parentElement.parentElement.parentElement.querySelector('.name').textContent);
         console.log(e.target.parentElement.parentElement.parentElement.querySelector('.name').textContent);
 
 

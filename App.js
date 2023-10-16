@@ -63,7 +63,7 @@ function displaynewscard(newsarray) {
         <p>BY <span class="name">${author}</span></p> 
         <p>CATEGORY  <span class="category">${category}</span></p>
         </div>
-        <p class="content">${content} <span> <a href=${url}}>read more.</a></span></p>
+        <p class="content">${content} <span> <a href=${url} target="_blank">read more.</a></span></p>
         <div class="heart1">
         <span><i class="fa fa-heart-o heart"></i></span>
         </div>   
@@ -148,22 +148,3 @@ function removeFromLS(name) {
 
 
 
-
-// favouriteButton.addEventListener("click", () => {
-//   allButton.classList.remove("active-tab");
-//   favouriteButton.classList.add("active-tab");
-//   movies = [...favouriteData];
-//   displayMovies(movies);
-//   previous.disabled = true;
-//   next.disabled=true;
-
-// });
-
-
-// allButton.addEventListener("click", () => {
-//   favouriteButton.classList.remove("active-tab");
-//   allButton.classList.add("active-tab");
-//   FetchAPI(pageNumber);
-//   previous.disabled = false;
-//   next.disabled=false;
-// });
