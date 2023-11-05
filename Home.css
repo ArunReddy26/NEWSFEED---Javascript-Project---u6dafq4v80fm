@@ -103,11 +103,11 @@ nav {
 
 @media (max-width:540px) {
 
-    .footer-content {
+    /* .footer-content {
         position: relative;
         margin-top: 5rem;
         bottom: 0;
-    }
+    } */
 
     .footer-content p {
         text-align: center;
